@@ -15,3 +15,7 @@ obj = "hello"
 obj.instance_eval { puts self }  # Outputs: hello
 # Enumerable#chunk: Groups elements based on the return value of the block.
 (1..10).chunk { |i| i.even? }.each { |even, nums| puts "#{even ? 'Even' : 'Odd'}: #{nums}" }
+
+#py
+# s="Hello"
+# print(s[::-1])
