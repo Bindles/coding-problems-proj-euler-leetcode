@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tailwind CSS Showcase</title>
+  <style>
+    /* Styles for Navbar */
+    .navbar {
+      background-color: #4b5563;
+      color: #fff;
+      padding: 1rem;
+    }
+    .navbar .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .navbar ul {
+      display: flex;
+      list-style: none;
+    }
+    .navbar ul li {
+      margin-right: 1rem;
+    }
+    .navbar ul li a {
+      color: #fff;
+      text-decoration: none;
+    }
+    .navbar ul li a:hover {
+      color: #cbd5e0;
+    }
+
+    /* Styles for Showcase Section */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1rem;
+    }
+    .cards-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      grid-gap: 2rem;
+      margin-top: 2rem;
+    }
+    .card {
+      background-color: #fff;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      border-radius: 0.5rem;
+      overflow: hidden;
+    }
+    .card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+    .card-content {
+      padding: 1rem;
+    }
+    .card-content h3 {
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+    }
+    .card-content p {
+      color: #4b5563;
+    }
+    .card-content a {
+      color: #1e40af;
+      text-decoration: none;
+    }
+    .card-content a:hover {
+      text-decoration: underline;
+    }
+
+    /* Styles for Buttons */
+    .buttons-container {
+      margin-top: 2rem;
+    }
+    .buttons-container button {
+      padding: 0.75rem 1.5rem;
+      border: none;
+      border-radius: 0.25rem;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    .buttons-container button.primary {
+      background-color: #1e40af;
+      color: #fff;
+    }
+    .buttons-container button.primary:hover {
+      background-color: #3b82f6;
+    }
+    .buttons-container button.secondary {
+      background-color: #cbd5e0;
+      color: #4b5563;
+    }
+    .buttons-container button.secondary:hover {
+      background-color: #e2e8f0;
+    }
+
+    /* Styles for Forms */
+    .forms-container {
+      margin-top: 2rem;
+    }
+    .forms-container input[type="text"],
+    .forms-container input[type="email"] {
+      width: 100%;
+      padding: 0.75rem;
+      border: 1px solid #cbd5e0;
+      border-radius: 0.25rem;
+      margin-bottom: 1rem;
+    }
+    .forms-container button[type="submit"] {
+      background-color: #1e40af;
+      color: #fff;
+      border: none;
+      border-radius: 0.25rem;
+      padding: 0.75rem 1.5rem;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    .forms-container button[type="submit"]:hover {
+      background-color: #3b82f6;
+    }
+  </style>
+</head>
+<body class="bg-gray-100">
+
+  <!-- Top Navbar -->
+  <nav class="navbar">
+    <div class="container">
+      <div class="text-xl font-semibold">My Website</div>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Showcase Section -->
+  <div class="container py-8">
+
+    <!-- Cards Section -->
+    <h2 class="text-2xl font-semibold mb-4">Cards</h2>
+    <div class="cards-container">
+      <!-- Card 1 -->
+      <div class="card">
+        <img src="https://via.placeholder.com/400x200" alt="Placeholder">
+        <div class="card-content">
+          <h3 class="text-xl font-semibold mb-2">Card Title</h3>
+          <p class="text-gray-600">Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+          <a href="#" class="block mt-2 text-blue-500 hover:underline">Read more</a>
+        </div>
+      </div>
+      <!-- Card 2 -->
+      <div class="card">
+        <img src="https://via.placeholder.com/400x200" alt="Placeholder">
+        <div class="card-content">
+          <h3 class="text-xl font-semibold mb-2">Card Title</h3>
+          <p class="text-gray-600">Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+          <a href="#" class="block mt-2 text-blue-500 hover:underline">Read more</a>
+        </div>
+      </div>
+      <!-- Add more cards here -->
+    </div>
+
+    <!-- Buttons Section -->
+    <h2 class="text-2xl font-semibold my-8">Buttons</h2>
+    <div class="buttons-container">
+      <button class="primary">Primary Button</button>
+      <button class="secondary">Secondary Button</button>
+    </div>
+
+    <!-- Forms Section -->
+    <h2 class="text-2xl font-semibold my-8">Forms</h2>
+    <div class="forms-container">
+      <form>
+        <div class="mb-4">
+          <label for="name" class="block text-gray-700">Name</label>
+          <input type="text" id="name" name="name">
+        </div>
+        <div class="mb-4">
+          <label for="email" class="block text-gray-700">Email</label>
+          <input type="email" id="email" name="email">
+        </div>
+        <div class="mb-4">
+          <button type="submit">Submit</button>
+        </div>
+      </form>
+    </div>
+
+  </div>
+
+</body>
+</html>
