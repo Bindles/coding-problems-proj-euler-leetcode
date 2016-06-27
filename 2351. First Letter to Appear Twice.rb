@@ -3,7 +3,7 @@ s = "abccbaacz"
 # @param {String} s
 # @return {Character}
 def repeated_character(s)
-arr=[]
+    arr=[]
     s.chars.each do |c|
         return c if arr.include?(c)
         arr << c
