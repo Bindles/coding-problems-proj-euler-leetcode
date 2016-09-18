@@ -12,3 +12,8 @@ def count_good_rectangles(rectangles)
   res.count(res.max)
 end
 p count_good_rectangles(rectangles)
+
+def count_good_rectangles(rectangles)
+  rectangles.map{|rec| rec.min }.count(rectangles.map{|rec| rec.min }.max)
+end
+p count_good_rectangles(rectangles)
