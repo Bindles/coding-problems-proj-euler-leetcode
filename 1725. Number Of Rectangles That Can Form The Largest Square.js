@@ -8,7 +8,11 @@ rectangles = [[5,8],[3,9],[5,12],[16,5]]
 console.log (
 rectangles.filter(rec => Math.min(...rec))
 )
+//RUBY TRANSLATION
+function countGoodRectangles(rectangles) { return rectangles.map(rec => Math.min(...rec)).filter(value => value === Math.max(...rectangles.map(rec => Math.min(...rec)))).length; }
+console.log(countGoodRectangles(rectangles)); 
 
+//REABABLE SOL
 function countGoodRectangles(rectangles) {
   const minValues = rectangles.map(rec => Math.min(...rec));
   const maxValue = Math.max(...minValues);
