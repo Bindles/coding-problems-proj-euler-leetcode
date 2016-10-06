@@ -23,7 +23,6 @@ arr.append(4)
 print(arr)  # Output: [1, 2, 4, 3, 4]
 
 
-
 arr = [1, 2]
 arr.insert(0, 0)  # Insert 0 at the beginning
 print(arr)  # Output: [0, 1, 2]
@@ -32,7 +31,6 @@ print(arr)  # Output: [0, 1, 2]
 arr = [1, 2]
 arr = [0] + arr  # Concatenate [0] with arr
 print(arr)  # Output: [0, 1, 2]
-
 
 
 arr = [1, 2, 3, 4]
