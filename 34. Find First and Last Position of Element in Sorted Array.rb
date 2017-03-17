@@ -19,3 +19,7 @@ def search_range(nums, target)
     res.empty? ? [-1, -1] : [res.first, res.last]
 end
 p search_range(nums, target)
+
+#* MISC
+#* USED TO SELECT NUM BY INDICES | CANT DO INDICES BY NUM
+p indices = nums.select.with_index { |n, i| i == 4 }
