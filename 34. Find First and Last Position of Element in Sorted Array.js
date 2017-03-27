@@ -15,3 +15,9 @@ var searchRange = function(nums, target) {
 };
 console.log(searchRange(nums,target))
 
+//* AWESOME NEW METHOD AT GIVES JS ARRAY[-1]
+console.log(
+    nums[0],
+    nums[nums.length - 1],
+    nums.at(-1)
+)
