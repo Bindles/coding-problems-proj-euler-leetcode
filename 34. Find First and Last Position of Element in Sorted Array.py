@@ -1,5 +1,5 @@
 #* 34. Find First and Last Position of Element in Sorted Array
-nums = [5,7,7,8,8,10]; target = 12
+nums = [5,7,7,8,8,10]; target = 8
 # @param {Integer[]} nums
 # @param {Integer} target
 # @return {Integer[]}
@@ -15,7 +15,6 @@ def search_range(nums, target):
     else:
         return [res[0], res[-1]]
 
-    return res
 
 print(search_range(nums,target))
   
