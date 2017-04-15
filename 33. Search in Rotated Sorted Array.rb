@@ -10,7 +10,7 @@ def search(nums, target)
 end
 p search(nums, target)
 
-#* 
+#* LOL TO REMEMBER HOW To USE <=> UNDER HOOD
 def search(nums, target)
   spaceship_operator_head_basher = ->(target, n) do
     return 0 if target == n
