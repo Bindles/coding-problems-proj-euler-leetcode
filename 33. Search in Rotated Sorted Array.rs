@@ -29,3 +29,15 @@ impl Solution {
       -1
   }
 }
+
+//RUBY .BSEARCH <=> RUST .BINARY_SEARCH
+//BINARY SEARCH
+impl Solution {
+  pub fn search(nums: Vec<i32>, target: i32) -> i32 {
+      // Perform binary search using the binary_search method
+      if let Ok(index) = nums.binary_search(&target) {
+          return index as i32;
+      }
+      -1
+  }
+}
