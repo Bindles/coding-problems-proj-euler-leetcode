@@ -41,3 +41,18 @@ impl Solution {
       -1
   }
 }
+
+
+//BSEARCH SOL RUST
+impl Solution {
+  pub fn search(nums: Vec<i32>, target: i32) -> i32 {
+      let mut nums = nums;
+      nums.sort();
+      
+      if let Ok(index) = nums.binary_search(&target) {
+          index as i32
+      } else {
+          -1
+      }
+  }
+}
