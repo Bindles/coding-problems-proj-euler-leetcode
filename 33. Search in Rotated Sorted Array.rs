@@ -1,5 +1,6 @@
 // 33. Search in Rotated Sorted Array
 //nums = [4,5,6,7,0,1,2]; target = 0
+//SOL 1
 impl Solution {
   pub fn search(nums: Vec<i32>, target: i32) -> i32 {
       let mut left = 0;
@@ -42,6 +43,21 @@ impl Solution {
   }
 }
 
+//SOL 2 WORKS
+impl Solution {
+  pub fn search(nums: Vec<i32>, target: i32) -> i32 {
+      let mut nums_with_indices: Vec<(i32, usize)> = nums.iter().enumerate().map(|(i, &val)| (val, i)).collect();
+      nums_with_indices.sort_unstable_by_key(|&(val, _)| val);
+
+      let result = nums_with_indices.binary_search_by_key(&target, |&(val, _)| val);
+
+      match result {
+          Ok(index) => nums_with_indices[index].1 as i32,
+          Err(_) => -1,
+      }
+  }
+}
+
 
 //BSEARCH SOL RUST | DOESNT WORK | COMING BACK DW
 impl Solution {
@@ -58,17 +74,24 @@ impl Solution {
 }
 
 
-//SOL 2 WORKS
+
+//WORKING. . . 
+//FAILS
+
+//FAIL 2
 impl Solution {
   pub fn search(nums: Vec<i32>, target: i32) -> i32 {
-      let mut nums_with_indices: Vec<(i32, usize)> = nums.iter().enumerate().map(|(i, &val)| (val, i)).collect();
-      nums_with_indices.sort_unstable_by_key(|&(val, _)| val);
+      let mut nums = nums;
+      nums.sort();
 
-      let result = nums_with_indices.binary_search_by_key(&target, |&(val, _)| val);
+      if nums.is_empty() {
+          return -1;
+      }
 
-      match result {
-          Ok(index) => nums_with_indices[index].1 as i32,
-          Err(_) => -1,
+      if let Ok(index) = nums.binary_search(&target) {
+          index as i32
+      } else {
+          -1
       }
   }
 }
