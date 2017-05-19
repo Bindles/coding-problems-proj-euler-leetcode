@@ -31,6 +31,7 @@ impl Solution {
   }
 }
 
+//. . . . . .
 //RUBY .BSEARCH <=> RUST .BINARY_SEARCH
 //BINARY SEARCH
 impl Solution {
@@ -43,7 +44,7 @@ impl Solution {
   }
 }
 
-//SOL 2 WORKS
+// BSEARCH SOL 2
 impl Solution {
   pub fn search(nums: Vec<i32>, target: i32) -> i32 {
       let mut nums_with_indices: Vec<(i32, usize)> = nums.iter().enumerate().map(|(i, &val)| (val, i)).collect();
@@ -59,7 +60,7 @@ impl Solution {
 }
 
 
-//BSEARCH SOL RUST | DOESNT WORK | COMING BACK DW
+//BSEARCH SOL 1 | RUST | DOESNT WORK | COMING BACK DW
 impl Solution {
   pub fn search(nums: Vec<i32>, target: i32) -> i32 {
       let mut nums = nums;
@@ -73,6 +74,37 @@ impl Solution {
   }
 }
 
+//REDO | BSEARCH SOL 1.1 | BETTER | 
+impl Solution {
+  pub fn search(nums: Vec<i32>, target: i32) -> i32 {
+      let f = |x: &i32| (*x < nums[0], *x);
+      match nums.binary_search_by_key(&f(&target), f) {
+          Ok(i) => i as i32,
+          Err(_) => -1,
+      }
+  }
+}
+
+
+//SOL 3 BSEARCH PARTITION_POINT
+impl Solution {
+  pub fn search(nums: Vec<i32>, target: i32) -> i32 {
+      let split = nums.partition_point(|&x| x >= nums[0]);
+      if target < nums[0] {
+          if let Ok(i) = nums[split..].binary_search(&target) {
+              (i + split) as i32
+          } else {
+              -1
+          }
+      } else {
+          if let Ok(i) = nums[..split].binary_search(&target) {
+              i as i32
+          } else {
+              -1
+          }
+      }
+  }
+}
 
 //OTHER STYLES
 //RECURSIVE | FAST
@@ -106,9 +138,8 @@ impl Solution {
 }
 
 
-//WORKING. . . 
+//WORKING. . . . .
 //FAILS
-
 //FAIL 2
 impl Solution {
   pub fn search(nums: Vec<i32>, target: i32) -> i32 {
