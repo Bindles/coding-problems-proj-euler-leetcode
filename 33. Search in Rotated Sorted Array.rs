@@ -74,7 +74,7 @@ impl Solution {
   }
 }
 
-//REDO | BSEARCH SOL 1.1 | BETTER | 
+//REDO | BSEARCH SOL 1.1 | BETTER | CLOSEST TO RUBY | STILL 1MS :(
 impl Solution {
   pub fn search(nums: Vec<i32>, target: i32) -> i32 {
       let f = |x: &i32| (*x < nums[0], *x);
