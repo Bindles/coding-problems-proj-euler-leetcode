@@ -5,6 +5,12 @@ n = 4; start = 3
 # @return {Integer}
 #*
 def xor_operation(n, start)
+    Array.new(n, 0).map.with_index{|num,index| start + num + 2 * index}.reduce(&:^)
+end
+p xor_operation(n, start)
+
+#*
+def xor_operation(n, start)
     arr = Array.new(n, 0)
     arr.map.with_index{|num,index| start + num + 2 * index}.reduce(&:^)
 end
