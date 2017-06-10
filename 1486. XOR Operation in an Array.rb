@@ -16,3 +16,16 @@ def xor_operation(n, start)
 end
 p xor_operation(n, start)
 
+#* WRITTEN OUT | (BEFORE COMPLETING IN PY,JS,RUST)
+def xor_operation(n, start)
+    total=0
+    arr = Array.new(n, 0)
+    res = arr.map.with_index{|num,index| start + num + 2 * index}
+    res.each do |num|
+        total ^= num
+    end
+    total
+end
+p xor_operation(n, start)
+
+
