@@ -18,8 +18,8 @@ p xor_operation(n, start)
 
 #* WRITTEN OUT | (BEFORE COMPLETING IN PY,JS,RUST)
 def xor_operation(n, start)
-    total=0
-    arr = Array.new(n, 0)
+    total=0 #rs=let arr=vec![0; n];#python | js 
+    arr = Array.new(n, 0) # arr = [0] * n | let arr = new Array(n).fill(0);
     res = arr.map.with_index{|num,index| start + num + 2 * index}
     res.each do |num|
         total ^= num
@@ -27,5 +27,6 @@ def xor_operation(n, start)
     total
 end
 p xor_operation(n, start)
+
 
 
