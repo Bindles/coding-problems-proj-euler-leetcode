@@ -28,5 +28,15 @@ def xor_operation(n, start)
 end
 p xor_operation(n, start)
 
+#* MUCH MORE SIMPLE SOL
+def xor_operation(n, start)
+    total = 0
+    n.times do |i|
+        total ^= start + 2 * i
+    end
+    total
+end
+p xor_operation(n, start)
+
 
 
