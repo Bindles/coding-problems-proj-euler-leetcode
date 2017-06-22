@@ -1,7 +1,5 @@
 #* 1486. XOR Operation in an Array
 n = 4; start = 3
-
-
 #*
 def xorOperation(n, start):
     total=0
@@ -12,5 +10,16 @@ def xorOperation(n, start):
 
     return total
 print(xorOperation(n,start))
+
+#* SIMPLE SOL
+class Solution:
+    def xorOperation(self, n: int, start: int) -> int:
+        total = 0
+        for i in range(n):
+            total ^= start + 2 * i
+        return total
+    
+print(Solution().xorOperation(n,start))
+
 
 
