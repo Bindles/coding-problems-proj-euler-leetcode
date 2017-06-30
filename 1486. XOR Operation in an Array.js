@@ -1,6 +1,6 @@
 // 1486. XOR Operation in an Array
 n = 4; start = 3
-// WRITTEN OUT | (BEFORE COMPLETING IN PY,JS,RUST)
+// SOL 1 | ALIKE RUBY SOL
 function xorOperation(n, start) {
     total=0
     let arr = new Array(n).fill(0)
@@ -12,6 +12,17 @@ function xorOperation(n, start) {
     return total
 }
 console.log(xorOperation(n, start))
+
+//SIMPLE SOL
+function xorOperation(n, start) {
+    let total = 0;
+    for (let i = 0; i < n; i++) {
+        total ^= start + 2 * i;
+    }
+    return total;
+};
+console.log(xorOperation(n, start))
+
 
 
 
