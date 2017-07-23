@@ -15,11 +15,15 @@ def num_of_pairs(nums, target)
 end
 p num_of_pairs(nums, target)
 
-#* CONCISE
+#* CONCISE | A READABLE | B ONELINER | A
 def num_of_pairs(nums, target)
     nums.each_index.sum do |i|
         (i...nums.size).count do |j|
             [nums[i], nums[j]].join == target
         end
     end
+end
+#* B
+def num_of_pairs(nums, target)
+    nums.each_index.sum { |i| (i + 1...nums.size).count { |j| [nums[i], nums[j]].join == target } }
 end
