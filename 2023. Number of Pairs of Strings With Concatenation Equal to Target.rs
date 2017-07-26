@@ -14,3 +14,13 @@ pub fn num_of_pairs(nums: Vec<String>, target: String) -> i32 {
 
 	count
 }
+
+//WORKING . . .
+//DOESNT WORK | DIRECT RUBY TRANSLATION
+impl Solution {
+    pub fn num_of_pairs(nums: Vec<String>, target: String) -> i32 {
+        nums.iter().enumerate().map(|(i, _)| {
+            (i + 1..nums.len()).filter(|&j| format!("{}{}", nums[i], nums[j]) == target).count() as i32
+        }).sum()
+    }
+}
