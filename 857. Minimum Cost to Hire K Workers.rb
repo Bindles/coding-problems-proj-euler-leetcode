@@ -17,6 +17,37 @@ end
 p mincost_to_hire_workers(quality, wage, k)
 
 
+def mincost_to_hire_workers(quality, wage, k)
+  n = quality.size
+  total_cost = Float::INFINITY
+  current_total_quality = 0
+  wage_to_quality_ratio = []
+  for i in (0...n)
+      wage_to_quality_ratio << [wage[i]/quality[i].to_f, quality[i]]
+  end
+
+  wage_to_quality_ratio.sort_by! { |x| x[0] }
+  highest_quality_workers = []
+
+  for i in (0...n)
+      val = wage_to_quality_ratio[i][1]
+      idx = highest_quality_workers.bsearch_index { |d| val <= d } || highest_quality_workers.size
+      highest_quality_workers.insert(idx, val)
+      current_total_quality += val
+
+      if highest_quality_workers.size > k
+          current_total_quality -= highest_quality_workers.pop
+      end
+
+      if highest_quality_workers.size == k
+          total_cost = [total_cost, current_total_quality * wage_to_quality_ratio[i][0]].min
+      end
+  end
+
+  total_cost
+end
+
+
 #* WORKING . . .
 #* DOESNT WORK
 def mincost_to_hire_workers(quality, wage, k)
