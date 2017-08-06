@@ -6,12 +6,14 @@ nums = ["777","7","77","77"]; target = "7777"
  * @param {string} target
  * @return {number}
  */
+//WORK
+var numOfPairs = function(nums, target) {
+    return nums.reduce((count, _, i) =>
+        count += [...Array(nums.length - i)].filter((_, j) => nums[i] + nums[j + i] === target).length
+    , 0);
+};
 
-/**
- * @param {string[]} nums
- * @param {string} target
- * @return {number}
- */
+//WORKING . . . . 
 // DONT WORK
 var numOfPairs = function(nums, target) {
     return nums.reduce((count, _, i) =>
@@ -20,6 +22,4 @@ var numOfPairs = function(nums, target) {
   };
 
 
-  
-
-  //work
+ 
