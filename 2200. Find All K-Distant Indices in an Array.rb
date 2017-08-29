@@ -18,7 +18,8 @@ def find_k_distant_indices(nums, key, k)
     res.uniq.sort
 end
 p find_k_distant_indices(nums, key, k)
-  
+
+#*
 def find_k_distant_indices(nums, key, k)
     res=[]
     nums.each_index do |i|
