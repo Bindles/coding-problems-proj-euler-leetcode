@@ -7,6 +7,11 @@ def reverse_only_letters(s)
   letters = s.chars.select { |c| c =~ /[a-z]/i }
   s.chars.map { |c| c =~ /[a-z]/i ? letters.pop : c }.join
 end
+#* 
+def reverse_only_letters(s)
+  letters = s.scan(/[a-zA-Z]/)
+  s.gsub(/[a-z]/i) { letters.pop }
+end
 
 def reverse_only_letters(s)
     p dashmap = s.chars.map.with_index{|c,i| i if c == '-'}
