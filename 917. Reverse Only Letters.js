@@ -13,8 +13,6 @@ var reverseOnlyLetters = function(s) {
     let result = s.split('').map(c => /[a-zA-Z]/.test(c) ? letters.pop() : c).join('');
     return result;
 }
-
-// Test cases
 console.log(reverseOnlyLetters("ab-cd"));          // Output: "dc-ba"
 console.log(reverseOnlyLetters("a-bC-dEf-ghIj"));  // Output: "j-Ih-gfE-dCba"
 console.log(reverseOnlyLetters("Test1ng-Leet=code-Q!"));  // Output: "Qedo1ct-eeLg=ntse-T!"
