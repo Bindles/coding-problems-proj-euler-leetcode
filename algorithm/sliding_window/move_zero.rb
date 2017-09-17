@@ -12,4 +12,14 @@ p movez(nums)
 mya = Array.new(5, 0)
 p mya
 
-
+#* SOL 2
+# @param {Integer[]} nums
+# @return {Void} Do not return anything, modify nums in-place instead.
+def move_zeroes(nums)
+  nums.reverse_each.with_index do |i,ind|
+      if i==0
+      nums.push(nums.delete_at((nums.size-1)-ind))
+      end   
+  end 
+  nums
+end
