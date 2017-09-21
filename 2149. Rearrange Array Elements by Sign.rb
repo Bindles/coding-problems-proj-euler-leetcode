@@ -12,25 +12,25 @@ p  rearrange_array(nums)
 
 #* BETTER
 def rearrange_array(nums)
-  p nums.partition(&:positive?).transpose.flatten
+  nums.partition(&:positive?).transpose.flatten
 end
 p  rearrange_array(nums)
 
 #* DIFF WAY
 def rearrange_array(nums)
-  p results = Array.new(nums.size, 0)
+  result = Array.new(nums.size, 0)
 
   index_even, index_odd = 0, 1
   nums.each do |num|
     if num > 0
-      results[index_even] = num
+      result[index_even] = num
       index_even += 2
     else
-      results[index_odd] = num
+      result[index_odd] = num
       index_odd += 2
     end
   end
-  results
+  result
 end
 p  rearrange_array(nums)
 
