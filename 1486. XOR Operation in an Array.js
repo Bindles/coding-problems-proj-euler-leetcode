@@ -3,7 +3,8 @@ n = 4; start = 3
 // SOL 1 | ALIKE RUBY SOL
 function xorOperation(n, start) {
     total=0
-    let arr = new Array(n).fill(0)
+    let arr = new Int32Array(n)
+    //let arr = new Array(n).fill(0)
     let res = arr.map((num, index) => start + num + 2 * index)
     console.log(res)
     for (num of res) {
