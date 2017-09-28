@@ -16,6 +16,17 @@ var numOfPairs = function(nums, target) {
     return count
 };
 
+//SOL 4 ELIMINATE i!=J with better loop
+var numOfPairs = function(nums, target) {
+    let count = 0;
+    for(var i=0;i<nums.length;i++){
+        for(var j=i;j<nums.length;j++){
+            if(nums[i]+nums[j] == target) count++
+        }
+    }
+    return count
+};
+
 //WORKING . . . . 
 //SOL 2
 var numOfPairs = function(nums, target) {

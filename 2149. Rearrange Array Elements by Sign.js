@@ -13,9 +13,8 @@ console.log(rearrangeArray(nums))
 
 //TRANSLATION FORM RUBY INTO SUPERFAST JS | LEARNED =>
 //TO USE new Int32Array(nums.length) > new Array(nums.length).fill(0)
-
 var rearrangeArray = function(nums) {
-  const res = new Int32Array(nums.length);
+  const res = new Int32Array(nums.length); // faster then Array(n).fill(0) if ints, well in js "numbers"
   let index_even = 0;
   let index_odd = 1;
   for(let i = 0; i < nums.length; i++){
@@ -29,3 +28,4 @@ var rearrangeArray = function(nums) {
   }
   return res;
 };
+console.log(rearrangeArray(nums))

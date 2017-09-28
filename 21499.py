@@ -10,8 +10,8 @@ def rearrange_array(nums):
             else:
                 nums[left], nums[left + 1] = nums[left + 1], nums[left]
             # Move pointers to the next pair
-            left += 2
-            right -= 2
+            left += 1
+            right -= 1
         else:
             # Move pointers to the next pair
             left += 1
@@ -20,5 +20,8 @@ def rearrange_array(nums):
     return nums
 
 # Test the function
-nums1 = [3, 1, -5, -2, -4, 2]
-print(rearrange_array(nums1))  # Output: [3, -5, 1, -2, -4, 2]
+nums1 = [3, 1, -2, -5, 2, -4]
+print(rearrange_array(nums1))  # Output: [3, -2, 1, -5, 2, -4]
+
+nums2 = [-1, 1]
+print(rearrange_array(nums2))  # Output: [1, -1]
