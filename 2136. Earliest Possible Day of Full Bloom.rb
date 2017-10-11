@@ -24,4 +24,11 @@ def earliest_full_bloom(plant_time, grow_time)
 end
 p earliest_full_bloom(plant_time, grow_time)
 
+#*
+def earliest_full_bloom(plant_time, grow_time)
+  plant_time.zip(grow_time).sort {|a, b| b.last <=> a.last }.inject([0, 0]) {|(tcur, tend), (x, g)|
+      [tcur + x, [tend, tcur + x + g].max]
+  }.last
+end
+p earliest_full_bloom(plant_time, grow_time)
 
