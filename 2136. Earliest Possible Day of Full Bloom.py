@@ -5,7 +5,7 @@ plantTime = [1,4,3]; growTime = [2,3,1]
 # @param {Integer[]} growTime
 # @return {Integer}
 #*
-def earliest_full_bloom(plantTime, growTime):
+def earliestFullBloom(plantTime, growTime):
     rest_day = 0
     more_necessary_days = []
     for plant_day, grow_day in sorted(zip(plantTime, growTime), key=lambda x: x[1]):
@@ -17,4 +17,4 @@ def earliest_full_bloom(plantTime, growTime):
 # Test case
 plantTime = [1, 4, 3]
 growTime = [2, 3, 1]
-print(earliest_full_bloom(plantTime, growTime))
+print(earliestFullBloom(plantTime, growTime))
