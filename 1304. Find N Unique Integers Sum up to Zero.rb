@@ -2,6 +2,7 @@
 n = 5
 # @param {Integer} n
 # @return {Integer[]}
+#*
 def sum_zero(n)
     result = []
     result.push(0) if n.odd?
