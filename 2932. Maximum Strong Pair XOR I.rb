@@ -14,8 +14,8 @@ def maximum_strong_pair_xor(nums)
 end
 p maximum_strong_pair_xor(nums)  # => 7
 
-
-#*
+#* WORKING. . .
+#* NO GOOD
 def maximum_strong_pair_xor(nums)
     res=[]
     nums.each_index do |i|
