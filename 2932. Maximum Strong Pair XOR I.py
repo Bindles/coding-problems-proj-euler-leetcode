@@ -1,7 +1,7 @@
 # PYTHON
 #* 2932. Maximum Strong Pair XOR I
 nums = [1,2,3,4,5]
-
+from typing import List
 #*
 class Solution:
     def maximumStrongPairXor(self, nums: List[int]) -> int:
@@ -16,4 +16,5 @@ class Solution:
         
         return max_xor
 
+print(Solution().maximumStrongPairXor(nums))
        
