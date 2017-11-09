@@ -4,6 +4,15 @@ arr = [2,2,2,2,5,5,5,8]; k = 3; threshold = 4
 # @param {Integer} k
 # @param {Integer} threshold
 # @return {Integer}
+#* SOL 2 | CONCISE
+def num_of_subarrays(arr, k, threshold)
+  (0..arr.size-k).count do |i|
+    arr[i...i+k].sum / 3 >= threshold
+  end
+end
+p num_of_subarrays(arr, k, threshold)
+
+#* SOL 1
 def num_of_subarrays(arr, k, threshold)
   count=0
   (0..arr.size-k).each do |i|
@@ -14,3 +23,4 @@ def num_of_subarrays(arr, k, threshold)
   count
 end
 p num_of_subarrays(arr, k, threshold)
+
