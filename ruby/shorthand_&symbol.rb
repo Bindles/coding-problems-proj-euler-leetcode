@@ -1,4 +1,4 @@
-# Using map(&:length) to get the length of each string
+a# Using map(&:length) to get the length of each string
 p ["apple", "banana", "orange"].map(&:length)
 # Result: [5, 6, 6]
 

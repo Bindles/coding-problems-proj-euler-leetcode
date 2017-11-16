@@ -4,8 +4,9 @@ arr = [2,2,2,2,5,5,5,8]; k = 3; threshold = 4
 #*
 def num_of_subarrays(arr, k, threshold):
     count = 0
+    threshx = threshold*k
     for i in range(len(arr) - k + 1):
-        if sum(arr[i:i + k]) / k >= threshold:
+        if sum(arr[i:i + k])  >= threshx:
             count += 1
     return count
 

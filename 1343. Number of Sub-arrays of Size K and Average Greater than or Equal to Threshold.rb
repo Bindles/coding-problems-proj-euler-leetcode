@@ -24,3 +24,7 @@ def num_of_subarrays(arr, k, threshold)
 end
 p num_of_subarrays(arr, k, threshold)
 
+
+arrz = [[1, true], [2, true], [3, false], [false, 9], [4, nil]]
+p arrz.select(&:shift)
+
