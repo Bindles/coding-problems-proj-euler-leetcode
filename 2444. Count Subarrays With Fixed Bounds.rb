@@ -71,4 +71,40 @@ def count_subarrays(nums, *b) =
         }
   end
   
+  #* 1 WRITTEN OUT
+  def count_subarrays(nums, *bounds)
+    # Chunk the array into groups where each element is within the range defined by bounds
+    chunked_arrays = nums.chunk { |num| (bounds[0]..bounds[1]) === num }.to_a
+  
+    # Filter out chunks that start with a truthy value
+    filtered_chunks = chunked_arrays.select do |condition, array|
+      condition
+    end
+  
+    # Further filter chunks where the first element's minmax equals the bounds
+    valid_chunks = filtered_chunks.select do |condition, subarray|
+      subarray[0].minmax == bounds
+    end
+  
+    # Sum the lengths of valid subarrays
+    total_count = valid_chunks.sum do |condition, subarray|
+      # Initialize a hash with bounds elements set to 0
+      index_hash = bounds.to_h { |bound| [bound, 0] }
+  
+      # Sum the contributions of each element in the subarray
+      subarray_sum = subarray.zip(1..).sum do |element, index|
+        # Update the index_hash with the current index if the element is in bounds
+        index_hash[element] &&= index
+  
+        # Find the minimum value in the index_hash
+        index_hash.values.min
+      end
+  
+      # Return the sum of the subarray contributions
+      subarray_sum
+    end
+  
+    # Return the total count of subarrays
+    total_count
+  end
   
