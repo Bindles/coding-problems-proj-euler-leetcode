@@ -141,3 +141,5 @@ def count_subarrays(nums, *b) =
     total_count
   end
   p count_subarrays(nums, *bounds)
+
+  #* SOL 1 | NO COMMENTS
