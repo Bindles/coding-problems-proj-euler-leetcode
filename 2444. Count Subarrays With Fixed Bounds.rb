@@ -26,25 +26,7 @@ def count_subarrays(nums, *b) =
         end
   end
 
-  
-  #*
-  def count_subarrays(nums, *bounds)
-    nums.chunk { [*bounds, _1].minmax == bounds }
-        .select(&:shift)
-        .sum { |subarray, index_hash = {}|
-          subarray.zip(1..).sum { |element, index| index_hash[element] = index and bounds.map { |bound| index_hash[bound] || 0 }.min }
-        }
-  end
-
-  #*
-  def count_subarrays(nums, *bounds)
-    nums.chunk { [*bounds, num].minmax == bounds }
-        .select(&:shift)
-        .sum { |subarray, index_hash = {}|
-          subarray.zip(1..).sum { |element, index| index_hash[element] = index and bounds.map { |bound| index_hash[bound] || 0 }.min }
-        }
-  end
-
+  #*---------------------------
 
   #* 2 FS
   def count_subarrays(nums, *b)
@@ -143,3 +125,25 @@ def count_subarrays(nums, *b) =
   p count_subarrays(nums, *bounds)
 
   #* SOL 1 | NO COMMENTS
+  def count_subarrays(nums, *bounds)
+    chunked_arrays = nums.chunk { |num| ([*bounds, num].minmax == bounds) }.to_a
+  
+    filtered_chunks = chunked_arrays.select do |condition, array|
+      condition
+    end
+  
+    total_count = filtered_chunks.sum do |condition, subarray|
+      index_hash = {}
+  
+      subarray_sum = subarray.zip(1..).sum do |element, index|
+        index_hash[element] = index
+        bounds.map { |bound| index_hash[bound] || 0 }.min
+      end
+  
+      subarray_sum
+    end
+  
+    total_count
+  end
+  p count_subarrays(nums, *bounds)
+  
