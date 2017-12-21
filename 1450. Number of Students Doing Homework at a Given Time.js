@@ -18,7 +18,7 @@ var busyStudent = function(startTime, endTime, queryTime) {
         .length;
 
     return count;
-}
+};
 console.log(busyStudent(startTime, endTime, queryTime))
 
 // SOL
@@ -27,7 +27,7 @@ var busyStudent = function(startTime, endTime, queryTime) {
     const count = times.filter(([a, b]) => queryTime >= a && queryTime <= b).length;
 
     return count;
-}
+};
 console.log(busyStudent(startTime, endTime, queryTime))
 
 // SOL
@@ -41,7 +41,7 @@ var busyStudent = function(startTime, endTime, queryTime) {
     }
 
     return count;
-}
+};
 console.log(busyStudent(startTime, endTime, queryTime))
 
 
