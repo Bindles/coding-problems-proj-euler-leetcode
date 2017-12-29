@@ -1,8 +1,12 @@
 // JAVASCRIPT
 // 2428. Maximum Sum of an Hourglass
 grid = [[6,2,1,3],[4,2,1,5],[9,2,8,7],[4,1,2,9]]
+/**
+ * @param {number[][]} grid
+ * @return {number}
+ */
 //SOL
-function maxSum(grid) {
+var maxSum = function(grid) {
   let max = -Infinity;
   for (let i = 0; i < grid.length - 2; i++) {
       for (let j = 0; j < grid[0].length - 2; j++) {
@@ -13,5 +17,5 @@ function maxSum(grid) {
       }
   }
   return max;
-}
+};
 console.log(maxSum(grid));
