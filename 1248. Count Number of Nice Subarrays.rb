@@ -15,6 +15,23 @@ def number_of_subarrays(nums, k)
   end
 end
 
+#* 2
+def number_of_subarrays(nums, k)
+  odd = 0
+  dic = Hash.new(0)
+  dic[0] = 1
+  l = nums.length
+  count = 0
+
+  (0...l).each do |i|
+    odd += (nums[i] % 2)
+    count += dic[odd - k]
+    dic[odd] += 1
+  end
+
+  count
+end
+p number_of_subarrays(nums, k)
 
 
 #*WORKING . . .
