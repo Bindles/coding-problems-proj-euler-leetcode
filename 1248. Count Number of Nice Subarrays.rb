@@ -33,6 +33,32 @@ def number_of_subarrays(nums, k)
 end
 p number_of_subarrays(nums, k)
 
+#* SW 3
+def number_of_subarrays(nums, k)
+  count = 0
+  left = 0
+  nice_subarrays = 0
+  current_count = 0
+
+  nums.each_with_index do |num, right|
+    if num % 2 != 0
+      current_count += 1
+      count = 0
+    end
+    if current_count == k
+      while left < nums.length && nums[left] % 2 == 0
+        count += 1
+        left += 1
+      end
+      count += 1
+      current_count -= 1
+      left += 1
+    end
+    nice_subarrays += count
+  end
+  nice_subarrays
+end
+
 
 #*WORKING . . .
 #*
