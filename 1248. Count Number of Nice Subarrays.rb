@@ -59,6 +59,36 @@ def number_of_subarrays(nums, k)
   nice_subarrays
 end
 
+#* SOL SW 3 COMMENTS
+def number_of_subarrays(nums, k)
+  count = 0
+  left = 0
+  nice_subarrays = 0
+  current_count = 0
+
+  # Iterate over the whole array for counting the length of the nice subarrays
+  nums.each_with_index do |num, right|
+    # Checking if the number is odd and reinitializing the count for the next iteration
+    if num % 2 != 0
+      current_count += 1
+      count = 0
+    end
+    if current_count == k
+      # Check if the number at the left is even and increment left while true since this doesn't affect our current counter
+      while left < nums.length && nums[left] % 2 == 0
+        count += 1
+        left += 1
+      end
+      # If the number is odd, increment the count by one
+      count += 1
+      current_count -= 1
+      left += 1
+    end
+    nice_subarrays += count
+  end
+  nice_subarrays
+end
+
 
 #*WORKING . . .
 #*
