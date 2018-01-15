@@ -44,4 +44,3 @@ def numberOfSubarrays(self, nums: List[int], k: int) -> int:
 	return count
 
 print(Solution().numberOfSubarrays(nums))
-
