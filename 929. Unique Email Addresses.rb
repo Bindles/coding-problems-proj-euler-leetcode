@@ -16,6 +16,29 @@ def num_unique_emails(emails)
 end
 p num_unique_emails(emails)
 
+#*
+def num_unique_emails(emails)
+  purge = ->str{ 
+    local,domain = str.split(?@)
+    local.gsub!(/\./,"")
+    local.gsub!(/^([^+]+).*/,'\1')
+    local + ?@ + domain
+  }
+  emails.map(&purge).uniq.size
+end
+p num_unique_emails(emails)
+
+#*
+def num_unique_emails(emails)
+  emails.uniq { |email| clean(email) }.count
+end
+
+def clean(email)
+  local, domain = email.split('@')
+  local.split('+').first.split('.').join + '@' + domain
+end
+p num_unique_emails(emails)
+
 
 #* TESTS 
 def num_unique_emails(emails)
