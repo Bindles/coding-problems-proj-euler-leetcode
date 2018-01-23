@@ -39,6 +39,21 @@ def clean(email)
 end
 p num_unique_emails(emails)
 
+#*
+def num_unique_emails(emails)
+  new_email_array = []
+
+  emails.each do |email|
+    temp_email = email.split('@')
+    temp_email[0] = temp_email[0].tr('.', '')
+    email = temp_email[0].split('+')[0] + '@' +temp_email[1]
+    new_email_array << email
+  end
+
+  new_email_array.uniq.count
+end
+p num_unique_emails(emails)
+
 
 #* TESTS 
 def num_unique_emails(emails)
