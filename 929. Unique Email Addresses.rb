@@ -54,6 +54,18 @@ def num_unique_emails(emails)
 end
 p num_unique_emails(emails)
 
+#*
+def num_unique_emails(emails)
+	emails.map { |email| email.partition('@').map.with_index { |c, i| i == 0 ? c.gsub(/\.|\+(.*)/, '') : c  }.join('') }.uniq.length
+end
+p num_unique_emails(emails)
+
+#*
+def num_unique_emails(emails)
+  emails.map{|email| email[0, email.index(/[+@]/)].gsub('.', '') + email[email.index('@')..]}.uniq.size
+end
+p num_unique_emails(emails)
+
 
 #* TESTS 
 def num_unique_emails(emails)
